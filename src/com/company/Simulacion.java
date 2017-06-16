@@ -97,7 +97,7 @@ public class Simulacion {
 
             //delete vHijos;
 
-            Matriz hijoMatriz = new Matriz();
+            Matriz hijoMatriz = new Matriz(tamUniversal);
             hijoMatriz.setMatrizDatos(pasarAMatriz(hijo1));
 
 
@@ -115,7 +115,7 @@ public class Simulacion {
             hijoMatriz.fitness = hijoMatriz.funcionFitness(numeroMagico);
             poblacion.add(0,hijoMatriz);
 
-            Matriz  hijaMatriz = new Matriz();
+            Matriz  hijaMatriz = new Matriz(tamUniversal);
             hijaMatriz.setMatrizDatos(pasarAMatriz(hijo2));
             numeroRandom = (int)Math.random() % 100000 + 1;
         /*division = (1.00 / (double)probMutacion)*100;
@@ -132,7 +132,7 @@ public class Simulacion {
         return poblacion;
     }
 
-    protected ArrayList<List<Integer>> cruzar( ArrayList<Integer> parent1,
+    protected ArrayList<ArrayList<Integer>> cruzar( ArrayList<Integer> parent1,
                                        ArrayList<Integer> parent2) {
 
         Random rng = new Random();
@@ -162,7 +162,7 @@ public class Simulacion {
         checkUnmappedElements(offspring1, mapping2, point1, point2);
         checkUnmappedElements(offspring2, mapping1, point1, point2);
 
-        ArrayList<List<Integer>> result = new ArrayList<List<Integer>>(2);
+        ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>(2);
         result.add(offspring1);
         result.add(offspring2);
         return result;

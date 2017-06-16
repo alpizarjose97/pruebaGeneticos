@@ -15,6 +15,8 @@ public class Matriz {
 
 
     public Matriz(int tama, ArrayList<Integer> numeros, int constanteMagica) {
+        super();
+        this.matrizDatos = new ArrayList<ArrayList<Integer>>();
         this.tamanno = tama;
         this.edad = 0;
         int tamRandom = tamanno*tamanno-1;
@@ -45,8 +47,9 @@ public class Matriz {
         this.fitness = this.funcionFitness(constanteMagica);
     }
 
-    public Matriz() {
+    public Matriz(int p_tamano) {
         super();
+        this.tamanno = p_tamano;
     }
 
     int funcionFitness(int numeroMagico)
@@ -161,5 +164,12 @@ public class Matriz {
         this.matrizDatos = matrizDatos;
     }
 
-
+    public void toStringA() {
+        for(int i = 0 ; i<this.matrizDatos.size() ; i++){
+            for (int j= 0; j<this.matrizDatos.size() ; j++){
+                System.out.print(this.matrizDatos.get(i).get(j) + ' ');
+            }
+            System.out.print('\n');
+        }
+    }
 }

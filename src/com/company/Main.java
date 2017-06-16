@@ -6,7 +6,11 @@ public class Main {
 
     public static void main(String[] args) {
         Simulacion simulacion = new Simulacion();
-
+        simulacion.tamannoMatriz = 10;
+        simulacion.probabilidadMutacion = 7;
+        simulacion.esperanzaVida = 100;
+        simulacion.tamannoPoblacion = 10000;
+        simulacion.maximoGeneraciones = 1000;
         ArrayList<Integer> numerosNecesarios = new ArrayList<Integer>();
         ArrayList<Matriz> poblacion = new ArrayList<Matriz>();
         ArrayList<Matriz> bucket = new ArrayList<Matriz>();
@@ -63,13 +67,13 @@ public class Main {
                 if (resultadoFinal == fitnessActual){
                     //Aqui se debe presentar en pantalla la solucion
                     simulacion.cuadradoMagico = poblacion.get(i);
-                    poblacion.get(i).toString();
+                    poblacion.get(i).toStringA();
                     encontrado = true;
                     break;
                 } else {
-                    if(fitnessMaximo < poblacion.at(i).getFitness())
+                    if(fitnessMaximo < poblacion.get(i).getFitness())
                     {
-                        fitnessMaximo = poblacion.at(i).getFitness();
+                        fitnessMaximo = poblacion.get(i).getFitness();
                     }
                 }
             }
