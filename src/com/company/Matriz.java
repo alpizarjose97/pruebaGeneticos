@@ -45,6 +45,10 @@ public class Matriz {
         this.fitness = this.funcionFitness(constanteMagica);
     }
 
+    public Matriz() {
+        super();
+    }
+
     int funcionFitness(int numeroMagico)
     {
         int score = 0;
